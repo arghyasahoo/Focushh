@@ -34,11 +34,11 @@ function changeBackground() {
         'url("./static/img/d2hd73xxwvaa1.jpg")'
     ];
     let currentBackgroundIndex = 0;
-
-    document.body.style.transition = "background-image 1s ease-in-out";
+    
+    document.body.style.backgroundImage = backgrounds[currentBackgroundIndex];
+    currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
 
     setInterval(() => {
-        console.log(backgrounds[currentBackgroundIndex]);
         document.body.style.backgroundImage = backgrounds[currentBackgroundIndex];
         currentBackgroundIndex = (currentBackgroundIndex + 1) % backgrounds.length;
     }, 120000);
